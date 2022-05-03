@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <title>Post_list</title>
+</head>
+<body>
+    <div class="header">
+            <h1>My Blog!</h1>
+    </div>
+    <div class="recent">Recent Posts</div>
+    <div class="container">
+        <ul class="list">
+            {% for post in posts %}
+            <li class="item">
+                <h3><a href="">{{ post.title }}</a></h3>
+                <div class="content">{{ post.content|truncatewords:50 }}</div>
+                <div class="info">
+                    <div class="published-date"><span>Date | </span>{{ post.published_date }}</div>
+                    <div class="author"><span>Author | </span>{{ post.author }}</div>
+                </div>
+                
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
