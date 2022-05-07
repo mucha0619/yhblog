@@ -54,3 +54,9 @@ a:hover {
 .author {
     float: right;
 }
+
+.add-post {
+    position: absolute;
+    right: 50px;
+    top: 30px;
+}
